@@ -11,7 +11,7 @@ export const Container = styled.section`
         padding: 3rem 2rem;
     }
     @media (min-width: 900px) {
-        padding: 3rem 0;
+        padding: 0;
     }
 `
 export const Title = styled.h1`
