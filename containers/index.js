@@ -1,0 +1,6 @@
+export { default as HeaderContainer } from './header'
+export { default as FooterContainer } from './footer'
+export { default as MainContainer } from './main'
+export { default as IntroContainer } from './intro'
+export { default as RecentWorkContainer } from './recent-work'
+export { default as GetInTouchContainer } from './get-in-touch'
