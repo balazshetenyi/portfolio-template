@@ -1,6 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Container, Item, Title, ItemTitle, ItemCaption, ShowMore } from './styles/recent-work'
+import {
+    Container,
+    Wrapper,
+    Item,
+    Title,
+    ItemTitle,
+    ItemCaption,
+    ShowMore,
+} from './styles/recent-work'
 
 export default function RecentWork({
     title,
@@ -16,6 +24,15 @@ export default function RecentWork({
             {children}
         </Container>
     )
+}
+
+RecentWork.Wrapper = function RecentWorkWrapper({
+    children,
+    ...restProps
+}: {
+    children: any
+}): JSX.Element {
+    return <Wrapper {...restProps}>{children}</Wrapper>
 }
 
 RecentWork.Item = function RecentWorkItem({

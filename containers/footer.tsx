@@ -1,8 +1,8 @@
 import { Footer } from '../components'
 
-export default function FooterContainer() {
+export default function FooterContainer({ id }: { id: string }) {
     return (
-        <Footer>
+        <Footer id={id}>
             <Footer.FooterWrapper>
                 <Footer.SocialLink href="#" name="fa-brands fa-facebook-square"></Footer.SocialLink>
                 <Footer.SocialLink href="#" name="fa-solid fa-envelope"></Footer.SocialLink>

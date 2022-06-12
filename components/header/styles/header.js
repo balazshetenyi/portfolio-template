@@ -1,21 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
-    -moz-flex-direction: column;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -moz-align-items: -moz-flex-end;
-    -webkit-align-items: -webkit-flex-end;
-    -ms-align-items: -ms-flex-end;
     align-items: flex-end;
-    -moz-justify-content: space-between;
-    -webkit-justify-content: space-between;
-    -ms-justify-content: space-between;
     justify-content: space-between;
     background-color: #1f1815;
     background-attachment: scroll, scroll;
@@ -25,16 +13,20 @@ export const Container = styled.header`
     background-size: auto, 150%;
     color: rgba(255, 255, 255, 0.5);
     padding: 4em 1em;
-    height: 100%;
     left: 0;
     top: 0;
     text-align: center;
 
+    footer {
+        background: 0;
+    }
+
     @media (min-width: 900px) {
-        padding: 8em 4em;
+        height: 100vh;
+        padding: 8em 2em;
         text-align: right;
-        position: fixed;
-        width: 35%;
+        position: sticky;
+        min-width: 35%;
     }
 `
 

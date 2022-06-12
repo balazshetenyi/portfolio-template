@@ -18,7 +18,7 @@ export default function HeaderContainer() {
                 </Header.Wrapper>
 
                 {/* Footer */}
-                <FooterContainer />
+                <FooterContainer id="footer__header" />
             </Header>
         </>
     )

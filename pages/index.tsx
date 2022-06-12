@@ -11,7 +11,7 @@ import {
 
 const Home: NextPage = () => {
     return (
-        <>
+        <div className="container">
             <Head>
                 <title>Portfolio</title>
             </Head>
@@ -24,8 +24,20 @@ const Home: NextPage = () => {
                 <GetInTouchContainer />
             </MainContainer>
 
-            <FooterContainer />
-        </>
+            <FooterContainer id="footer__main" />
+
+            <style jsx>{`
+                .container {
+                    display: flex;
+                    flex-flow: column nowrap;
+                }
+                @media (min-width: 900px) {
+                    .container {
+                        flex-direction: row;
+                    }
+                }
+            `}</style>
+        </div>
     )
 }
 

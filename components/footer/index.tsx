@@ -9,8 +9,19 @@ import {
     SocialLinks,
 } from './styles/footer'
 
-export default function Footer({ children, ...restProps }: { children: any }) {
-    return <Container {...restProps}>{children}</Container>
+export default function Footer({
+    id,
+    children,
+    ...restProps
+}: {
+    id: string
+    children: any
+}): JSX.Element {
+    return (
+        <Container id={id} {...restProps}>
+            {children}
+        </Container>
+    )
 }
 
 Footer.FooterWrapper = ({ children, ...restProps }: { children: any }): any => {
