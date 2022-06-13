@@ -6,6 +6,7 @@ export default function MainContainer({ children, ...restProps }: { children: an
                 @media (min-width: 900px) {
                     main {
                         padding: 6rem 2rem;
+                        flex-grow: 1;
                     }
                 }
             `}</style>

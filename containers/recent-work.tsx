@@ -42,7 +42,7 @@ export default function RecentWorkContainer() {
                 ></RecentWork.Item>
             </RecentWork.Wrapper>
 
-            <RecentWork.ShowMore href="#">Kep Galeria</RecentWork.ShowMore>
+            <RecentWork.ShowMore href="/gallery">Kep Galeria</RecentWork.ShowMore>
         </RecentWork>
     )
 }

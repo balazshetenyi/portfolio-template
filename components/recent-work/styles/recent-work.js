@@ -35,6 +35,7 @@ export const Title = styled.h2`
     }
 `
 export const Item = styled.div`
+    background: url(${({ bg }) => bg || ''});
     margin: 0 auto 2rem auto;
     width: 100%;
     max-width: 400px;

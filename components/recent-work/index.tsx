@@ -37,6 +37,7 @@ RecentWork.Wrapper = function RecentWorkWrapper({
 
 RecentWork.Item = function RecentWorkItem({
     src,
+    bg,
     href,
     alt,
     width,
@@ -46,20 +47,22 @@ RecentWork.Item = function RecentWorkItem({
     ...restProps
 }: {
     src: string
+    bg?: string
     href: string
     alt: string
     width: number
     height: number
-    itemTitle: string
-    itemCaption: string
+    itemTitle?: string
+    itemCaption?: string
 }): JSX.Element {
     return (
-        <Item {...restProps}>
+        <Item {...restProps} bg={bg}>
             <Link href={href}>
                 <a>
                     <Image src={src} alt={alt} width={width} height={height} layout="responsive" />
                 </a>
             </Link>
+
             <ItemTitle>{itemTitle}</ItemTitle>
             <ItemCaption>{itemCaption}</ItemCaption>
         </Item>
