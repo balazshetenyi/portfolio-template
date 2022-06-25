@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container, Wrapper, Avatar, Title, Link } from './styles/header'
+import { Container, Wrapper, Avatar, Title, AvatarLink } from './styles/header'
 
-export default function Header({ children, ...restProps }: { children: any }) {
+export default function Header({ children, ...restProps }: { children: any }): JSX.Element {
     return <Container {...restProps}>{children}</Container>
 }
 
-Header.Wrapper = ({ children, ...restProps }: { children: any }): any => {
+Header.Wrapper = ({ children, ...restProps }: { children: any }): JSX.Element => {
     return <Wrapper className="header-container">{children}</Wrapper>
 }
 
@@ -13,10 +13,21 @@ Header.Avatar = ({ src, ...restProps }: { src: string }): JSX.Element => {
     return <Avatar src={src} {...restProps} />
 }
 
-Header.Title = ({ children, ...restProps }: { children: any }): any => {
+Header.Title = ({ children, ...restProps }: { children: any }): JSX.Element => {
     return <Title {...restProps}>{children}</Title>
 }
 
-Header.Link = ({ children, ...restProps }: { children: any }): any => {
-    return <Link {...restProps}>{children}</Link>
+Header.AvatarLink = ({
+    href,
+    children,
+    ...restProps
+}: {
+    href: string
+    children: any
+}): JSX.Element => {
+    return (
+        <AvatarLink href={href} {...restProps}>
+            <a className="avatar-link">{children}</a>
+        </AvatarLink>
+    )
 }

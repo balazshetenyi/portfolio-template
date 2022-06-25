@@ -1,4 +1,12 @@
-import { Container, Title, Text, Form, SendForm, Contact } from './styles/get-in-touch'
+import {
+    Container,
+    Title,
+    Text,
+    Form,
+    SendForm,
+    Contact,
+    ContactWrapper,
+} from './styles/get-in-touch'
 
 export default function GetInTouch({
     title,
@@ -41,6 +49,15 @@ GetInTouch.Form = function GetInTouchForm({
     )
 }
 
+GetInTouch.ContactWrapper = function GetInTouchContactWrapper({
+    children,
+    ...restProps
+}: {
+    children: any
+}): JSX.Element {
+    return <ContactWrapper {...restProps}>{children}</ContactWrapper>
+}
+
 GetInTouch.Contact = function GetInTouchContact({
     children,
     icon,
@@ -52,7 +69,7 @@ GetInTouch.Contact = function GetInTouchContact({
     return (
         <Contact {...restProps}>
             <i className={icon}></i>
-            <p>{children}</p>
+            {children}
         </Contact>
     )
 }

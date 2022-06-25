@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
     padding: 2rem;
+
+    @media (min-width: 900px) {
+        width: 80%;
+    }
 `
 export const Wrapper = styled.div`
     display: grid;
@@ -10,7 +14,7 @@ export const Wrapper = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
     @media (min-width: 900px) {
-        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 `
 export const Item = styled.div`
@@ -20,8 +24,8 @@ export const Item = styled.div`
     margin: 0 auto 1rem;
 
     @media (min-width: 900px) {
-        width: 360px;
-        height: 202.5px;
+        width: 300px;
+        height: 168.75px;
     }
 `
 export const ItemImage = styled.div`

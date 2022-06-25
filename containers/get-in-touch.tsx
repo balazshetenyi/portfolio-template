@@ -8,26 +8,30 @@ export default function GetInTouchContainer() {
                 orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum
                 dolor.
             </GetInTouch.Text>
-            <GetInTouch.Form buttonText="Kuldes"></GetInTouch.Form>
-            <GetInTouch.Contact icon="fa-solid fa-house-chimney">
-                <p>
-                    1234 Somewhere Rd.
-                    <br />
-                    Nashville,
-                    <br />
-                    TN 00000
-                    <br />
-                    United States
-                </p>
-            </GetInTouch.Contact>
-            <GetInTouch.Contact icon="fa-solid fa-mobile-screen-button">
-                <p>000-000-0000</p>
-            </GetInTouch.Contact>
-            <GetInTouch.Contact icon="fa-solid fa-envelope">
-                <a href="mailto:hello@untitled.tld?subject=Uzenet munka ugyben">
-                    hello@untitled.tld
-                </a>
-            </GetInTouch.Contact>
+            <GetInTouch.ContactWrapper>
+                <GetInTouch.Form buttonText="Kuldes"></GetInTouch.Form>
+                <div className="contact-holder">
+                    <GetInTouch.Contact icon="fa-solid fa-house-chimney">
+                        <p>
+                            1234 Somewhere Rd.
+                            <br />
+                            Nashville,
+                            <br />
+                            TN 00000
+                            <br />
+                            United States
+                        </p>
+                    </GetInTouch.Contact>
+                    <GetInTouch.Contact icon="fa-solid fa-mobile-screen-button">
+                        <p>000-000-0000</p>
+                    </GetInTouch.Contact>
+                    <GetInTouch.Contact icon="fa-solid fa-envelope">
+                        <a href="mailto:hello@untitled.tld?subject=Uzenet munka ugyben">
+                            hello@untitled.tld
+                        </a>
+                    </GetInTouch.Contact>
+                </div>
+            </GetInTouch.ContactWrapper>
         </GetInTouch>
     )
 }

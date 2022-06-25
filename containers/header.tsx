@@ -7,9 +7,9 @@ export default function HeaderContainer() {
             {/* Header */}
             <Header>
                 <Header.Wrapper>
-                    <Header.Link>
+                    <Header.AvatarLink href="/">
                         <Header.Avatar src="images/avatar.jpg"></Header.Avatar>
-                    </Header.Link>
+                    </Header.AvatarLink>
                     <Header.Title>
                         <strong>I am Strata</strong>, a super simple <br />
                         responsive site template freebie <br />

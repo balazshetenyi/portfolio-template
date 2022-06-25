@@ -9,6 +9,7 @@ export const Container = styled.section`
 
     @media (min-width: 600px) {
         padding: 3rem 2rem;
+        width: 80%;
     }
     @media (min-width: 900px) {
         padding: 0;

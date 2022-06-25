@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 export const Container = styled.header`
     display: flex;
@@ -21,12 +22,33 @@ export const Container = styled.header`
         background: 0;
     }
 
+    .avatar-link {
+        margin: 0 0 1em 0;
+        width: 6.25em;
+        border-radius: 100%;
+        border: 0;
+        display: inline-block;
+        position: relative;
+        -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        border-bottom: dotted 1px;
+        color: #49bf9d;
+        text-decoration: none;
+    }
+
     @media (min-width: 900px) {
         height: 100vh;
         padding: 8em 2em;
         text-align: right;
         position: sticky;
-        min-width: 35%;
+        min-width: 30%;
+
+        footer#footer__header {
+            padding: 0;
+            margin: 0;
+        }
     }
 `
 
@@ -62,18 +84,4 @@ export const Title = styled.h1`
     font-weight: 400;
 `
 
-export const Link = styled.a`
-    margin: 0 0 1em 0;
-    width: 6.25em;
-    border-radius: 100%;
-    border: 0;
-    display: inline-block;
-    position: relative;
-    -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    border-bottom: dotted 1px;
-    color: #49bf9d;
-    text-decoration: none;
-`
+export const AvatarLink = styled(Link)``

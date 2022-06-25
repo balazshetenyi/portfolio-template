@@ -18,6 +18,7 @@ export const Container = styled.section`
     }
 
     @media (min-width: 600px) {
+        width: 80%;
     }
 `
 export const Wrapper = styled.div`
