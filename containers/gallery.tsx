@@ -1,18 +1,19 @@
 import { Gallery } from '../components'
+import { Portfolio } from '../schemas/portfolio'
 
-export default function GalleryContainer() {
+export default function GalleryContainer({ data }: { data: Portfolio[] }) {
     return (
         <Gallery>
+            <Gallery.PageTitle>Kep galeria</Gallery.PageTitle>
             <Gallery.Wrapper>
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
-                <Gallery.Item srcOne="/images/bg.jpg" srcTwo="/images/bg2.jpeg" />
+                {data &&
+                    data.map((document) => (
+                        <Gallery.Item
+                            srcOne={document.before}
+                            srcTwo={document.after}
+                            key={document.before}
+                        />
+                    ))}
             </Gallery.Wrapper>
         </Gallery>
     )

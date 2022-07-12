@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+import { DARK, LIGHT } from '../../../constants/colors'
 
 export const Container = styled.section`
-    padding: 2rem;
-
+    padding: 2rem 0;
     @media (min-width: 900px) {
-        width: 80%;
+        width: 90%;
+        margin: 0 auto;
     }
 `
 export const Wrapper = styled.div`
@@ -16,6 +17,11 @@ export const Wrapper = styled.div`
     @media (min-width: 900px) {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
+`
+export const PageTitle = styled.h2`
+    color: ${DARK};
+    text-align: center;
+    margin-bottom: 2rem;
 `
 export const Item = styled.div`
     position: relative;
@@ -101,5 +107,118 @@ export const SliderButton = styled.div`
         border: solid #5d5d5d;
         border-width: 0 2px 2px 0;
         transform: rotate(135deg);
+    }
+`
+export const UploadGalleryContainer = styled.div`
+    width: 100%;
+    max-height: 500px;
+    background-color: #000;
+    display: inline-table;
+    margin: 1rem;
+
+    img {
+        inline-size: 100%;
+        height: auto;
+        max-height: inherit;
+        margin: 0 auto;
+    }
+`
+export const ImageContainer = styled.div`
+    max-height: inherit;
+    position: relative;
+
+    svg {
+        position: absolute;
+        font-size: 2rem;
+        color: #fff;
+        top: 50%;
+        transform: translate(0, 50%);
+        opacity: 0.7;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.right {
+            right: 6%;
+        }
+    }
+`
+export const Picture = styled.img``
+export const Thumbnail = styled.img`
+    opacity: 0.5;
+    cursor: pointer;
+    inline-size: 100%;
+    max-width: 200px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    scroll-snap-align: start;
+
+    &.selected {
+        opacity: 1;
+    }
+`
+export const Control = styled.img``
+export const ThumbnailsContainer = styled.div`
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 0.5rem;
+    overflow: scroll;
+    max-height: 200px;
+    padding: 1rem;
+    background-color: inherit;
+    position: relative;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 0.5rem;
+
+    svg {
+        position: fixed;
+        font-size: 2rem;
+        color: #fff;
+        top: 50;
+        transform: translate(50%, -50%);
+        opacity: 0.7;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.right {
+            right: 6%;
+        }
+    }
+`
+export const ButtonContainer = styled.div`
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    gap: 1rem;
+`
+export const Button = styled.a`
+    display: inline-block;
+    background-color: ${LIGHT};
+    color: ${DARK};
+    padding: 0.5rem 1.5rem;
+    border: 1px solid ${DARK};
+    border-radius: 6px;
+
+    &.delete-button {
+        background-color: red;
+        color: ${LIGHT};
+        opacity: 0.7;
+    }
+
+    &:hover {
+        background-color: ${DARK};
+        color: ${LIGHT};
+
+        &.delete-button {
+            background-color: red;
+            opacity: 1;
+        }
     }
 `

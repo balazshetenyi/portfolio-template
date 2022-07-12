@@ -1,25 +1,23 @@
 import { Gallery, Upload } from '../components'
 import { Portfolio } from '../schemas/portfolio'
-import Image from 'next/image'
 import FileUpload from '../components/file-upload'
 
 export default function UploadContainer({ data }: { data: Portfolio[] }): JSX.Element {
     return (
         <>
             <Upload>
-                <Upload.Title>Osszes kep</Upload.Title>
-                <FileUpload name="all" route="api/upload/all" />
+                <Upload.Title>Kepek kivalsztasa</Upload.Title>
+                <FileUpload name="all" route="api/upload/all" buttonText="Feltoltes" />
             </Upload>
             <Gallery>
                 <Gallery.Wrapper>
                     {data &&
-                        data.map((item) =>
-                            item.all.map((image, index) => (
-                                <div className="container" key={index}>
-                                    <Image src={image} layout="fill" />
-                                </div>
-                            ))
-                        )}
+                        data.map((item, index) => (
+                            <div key={index}>
+                                <Gallery.UploadGallery data={item} />
+                                <Gallery.UpdateUploadedGallery data={item} />
+                            </div>
+                        ))}
                 </Gallery.Wrapper>
             </Gallery>
 

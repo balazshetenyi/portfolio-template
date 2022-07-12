@@ -25,11 +25,6 @@ handler.post(async (req: MulterRequest, res: NextApiResponse) => {
 
         const collection: Collection = db.collection('portfolio')
 
-        const update = {
-            $set: {
-                all: images,
-            },
-        }
         const result = await collection.insertOne({ date, all: images })
 
         res.status(201).json({ response: result })
