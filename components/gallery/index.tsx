@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faCircleLeft, faCircleRight } from '@fortawesome/free-regular-svg-icons'
 import axios from 'axios'
 import {
@@ -10,6 +11,7 @@ import {
     ItemImage,
     Slider,
     SliderButton,
+    ViewGalleryButton,
     UploadGalleryContainer,
     ImageContainer,
     Picture,
@@ -20,6 +22,7 @@ import {
 } from './styles/gallery'
 import { DARK, LIGHT } from '../../constants/colors'
 import { Portfolio } from '../../schemas/portfolio'
+import Popup from '../popup'
 
 export default function Gallery({ children, ...restProps }: { children: any }): JSX.Element {
     return <Container {...restProps}>{children}</Container>
@@ -36,12 +39,19 @@ Gallery.PageTitle = function GalleryPageTitle({ children, ...restProps }: { chil
 Gallery.Item = function GalleryItem({
     srcOne,
     srcTwo,
+    buttonText,
+    buttonAction,
+    children,
     ...restProps
 }: {
     srcOne: string
     srcTwo: string
+    buttonText?: string
+    buttonAction: Function
+    children: any
 }) {
     const [position, setPosition] = useState(50)
+
     return (
         <>
             <Item {...restProps}>
@@ -58,6 +68,9 @@ Gallery.Item = function GalleryItem({
                     onChange={(e: ChangeEvent<HTMLProgressElement>) => setPosition(e.target.value)}
                 />
                 <SliderButton className="slider-button" pos={position}></SliderButton>
+                <ViewGalleryButton type="button" onClick={buttonAction}>
+                    {children}
+                </ViewGalleryButton>
             </Item>
         </>
     )
@@ -75,14 +88,14 @@ Gallery.UploadGallery = function GalleryUploadGallery({ data }: { data: Portfoli
 
     const scrollLeft = () => {
         if (activeIndex != 0) {
-            setActiveIndex(activeIndex - 1)
+            setActiveIndex((prev) => prev - 1)
         }
     }
 
     const scrollRight = () => {
         let scrollBy = 0
         if (activeIndex != images.length - 1) {
-            setActiveIndex(activeIndex + 1)
+            setActiveIndex((prev) => prev + 1)
             if (activeIndex != 0) {
                 const image: HTMLImageElement = document.querySelector('.selected')
                 const imageContainer: HTMLDivElement =
@@ -102,8 +115,12 @@ Gallery.UploadGallery = function GalleryUploadGallery({ data }: { data: Portfoli
         <UploadGalleryContainer>
             <ImageContainer>
                 <Picture src={images[activeIndex]} />
-                <FontAwesomeIcon icon={faCircleLeft} onClick={scrollLeft} />
-                <FontAwesomeIcon icon={faCircleRight} className="right" onClick={scrollRight} />
+                <FontAwesomeIcon className="left-arrow" icon={faCircleLeft} onClick={scrollLeft} />
+                <FontAwesomeIcon
+                    className="right-arrow"
+                    icon={faCircleRight}
+                    onClick={scrollRight}
+                />
                 <ButtonContainer>
                     <Button onClick={() => handleClick('before', images[activeIndex])}>
                         Elotte
@@ -126,8 +143,6 @@ Gallery.UploadGallery = function GalleryUploadGallery({ data }: { data: Portfoli
                         key={thumbnail}
                     />
                 ))}
-                <FontAwesomeIcon icon={faCircleLeft} onClick={scrollLeft} />
-                <FontAwesomeIcon icon={faCircleRight} className="right" onClick={scrollRight} />
             </ThumbnailsContainer>
         </UploadGalleryContainer>
     )

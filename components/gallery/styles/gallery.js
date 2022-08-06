@@ -30,17 +30,24 @@ export const Item = styled.div`
     margin: 0 auto 1rem;
 
     @media (min-width: 900px) {
-        width: 300px;
-        height: 168.75px;
+        width: 400px;
+        height: 225px;
     }
 `
 export const ItemImage = styled.div`
+    border-radius: 6px 50px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: 400px auto;
+    background-size: 300px auto;
+    -webkit-box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.61);
+    box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.61);
+
+    @media (min-width: 900px) {
+        background-size: 400px auto;
+    }
 
     &.first {
         background-image: url(${({ src }) => src || ''});
@@ -109,6 +116,19 @@ export const SliderButton = styled.div`
         transform: rotate(135deg);
     }
 `
+export const ViewGalleryButton = styled.button`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 5px 15px;
+    border: 0;
+    color: ${DARK};
+
+    &:hover {
+        opacity: 0.7;
+    }
+`
 export const UploadGalleryContainer = styled.div`
     width: 100%;
     max-height: 500px;
@@ -140,7 +160,10 @@ export const ImageContainer = styled.div`
             opacity: 1;
         }
 
-        &.right {
+        &.left-arrow {
+            left: 6%;
+        }
+        &.right-arrow {
             right: 6%;
         }
     }
@@ -172,24 +195,6 @@ export const ThumbnailsContainer = styled.div`
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 0.5rem;
-
-    svg {
-        position: fixed;
-        font-size: 2rem;
-        color: #fff;
-        top: 50;
-        transform: translate(50%, -50%);
-        opacity: 0.7;
-        cursor: pointer;
-
-        &:hover {
-            opacity: 1;
-        }
-
-        &.right {
-            right: 6%;
-        }
-    }
 `
 export const ButtonContainer = styled.div`
     position: absolute;
