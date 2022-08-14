@@ -35,12 +35,16 @@ GetInTouch.Text = function GetInTouchText({
 
 GetInTouch.Form = function GetInTouchForm({
     buttonText,
+    action,
+    method,
     ...restProps
 }: {
     buttonText: string
+    action
+    method
 }): JSX.Element {
     return (
-        <Form {...restProps}>
+        <Form {...restProps} action={action} method={method}>
             <input type={'text'} name="name" id="name" placeholder="Neved" />
             <input type={'email'} name="email" id="email" placeholder="Email cimed" />
             <textarea name="message" id="message" placeholder="Uzenet..." rows={10}></textarea>

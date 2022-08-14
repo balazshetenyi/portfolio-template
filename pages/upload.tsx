@@ -2,12 +2,21 @@ import { NextPageContext } from 'next/types'
 import { Layout, UploadContainer } from '../containers'
 import clientPromise from '../libs/mongodb'
 import { Portfolio } from '../schemas/portfolio'
+import { useUser } from '@auth0/nextjs-auth0'
 
 const Upload = ({ data }: { data: Portfolio[] }) => {
-    return (
+    const { user, error, isLoading } = useUser()
+
+    if (isLoading) {
+        return <p>Loading...</p>
+    }
+
+    return user ? (
         <Layout>
             <UploadContainer data={data} />
         </Layout>
+    ) : (
+        <h1>Jelentkezz be, ha ezt az oldalt szeretned latogatni! </h1>
     )
 }
 

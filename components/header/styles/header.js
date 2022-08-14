@@ -38,6 +38,11 @@ export const Container = styled.header`
         text-decoration: none;
     }
 
+    .upload,
+    .logout {
+        margin-bottom: 1rem;
+    }
+
     @media (min-width: 900px) {
         height: 100vh;
         padding: 8em 2em;
@@ -47,7 +52,7 @@ export const Container = styled.header`
 
         footer#footer__header {
             padding: 0;
-            margin: 0;
+            margin: 3rem 0;
         }
     }
 `

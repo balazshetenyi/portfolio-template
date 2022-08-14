@@ -1,7 +1,11 @@
+import Link from 'next/link'
 import { Header, Footer } from '../components'
 import FooterContainer from './footer'
+import { useUser } from '@auth0/nextjs-auth0'
 
 export default function HeaderContainer() {
+    const { user } = useUser()
+
     return (
         <>
             {/* Header */}
@@ -19,6 +23,16 @@ export default function HeaderContainer() {
 
                 {/* Footer */}
                 <FooterContainer id="footer__header" />
+                {user && (
+                    <>
+                        <a className="upload" href="upload">
+                            Upload
+                        </a>
+                        <a className="logout" href="/api/auth/logout">
+                            Logout
+                        </a>
+                    </>
+                )}
             </Header>
         </>
     )

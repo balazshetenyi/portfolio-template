@@ -9,7 +9,11 @@ export default function GetInTouchContainer() {
                 dolor.
             </GetInTouch.Text>
             <GetInTouch.ContactWrapper>
-                <GetInTouch.Form buttonText="Kuldes"></GetInTouch.Form>
+                <GetInTouch.Form
+                    buttonText="Kuldes"
+                    action="https://formsubmit.co/balazshetenyi82@gmail.com"
+                    method="POST"
+                ></GetInTouch.Form>
                 <div className="contact-holder">
                     <GetInTouch.Contact icon="fa-solid fa-house-chimney">
                         <p>
